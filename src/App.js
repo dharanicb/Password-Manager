@@ -22,6 +22,7 @@ class App extends Component {
     webInput: '',
     passwordInput: '',
     searchInput: '',
+    count: 0,
     commentsList: [],
   }
 
@@ -181,7 +182,7 @@ class App extends Component {
   }
 
   render() {
-    const {commentsList, searchInput} = this.state
+    const {commentsList, searchInput, count} = this.state
     // const {id} = commentsList
 
     const searchResults = commentsList.filter(eachUser =>
@@ -202,10 +203,12 @@ class App extends Component {
 
             <div className="password-input-container">
               <div className="nav-search-input">
-                <p className="counting">
-                  Your Passwords{' '}
-                  <span className="comments-count">{commentsList.length}</span>
-                </p>
+                <h1 className="counting">
+                  Your Passwords
+                  <span className="comments-count">
+                    {count + commentsList.length}
+                  </span>
+                </h1>
                 <div className="search-icon">
                   <div className="web-img icon">
                     <img
