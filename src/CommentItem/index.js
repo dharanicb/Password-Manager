@@ -1,15 +1,8 @@
 import './index.css'
 
 const CommentItem = props => {
-  const {commentDetails} = props
-  const {
-    id,
-    web,
-    name,
-    password,
-    isShowPassword,
-    initialClassName,
-  } = commentDetails
+  const {commentDetails, isShowPassword} = props
+  const {id, web, name, password, initialClassName} = commentDetails
   const initial = name ? name[0].toUpperCase() : ''
   //   const likeTextClassName = isShowPassword ? 'button active' : 'button'
 

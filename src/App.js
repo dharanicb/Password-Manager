@@ -24,6 +24,13 @@ class App extends Component {
     searchInput: '',
     count: 0,
     commentsList: [],
+    isShowPassword: false,
+  }
+
+  onchangeShowPassword = () => {
+    // const {isShowPassword} = this.state
+    // const {isShowPassword} = commentsList
+    this.setState(prevState => ({isShowPassword: !prevState.isShowPassword}))
   }
 
   deleteComment = commentId => {
@@ -42,6 +49,7 @@ class App extends Component {
         key={eachComment.id}
         commentDetails={eachComment}
         deleteComment={this.deleteComment}
+        isShowPassword={this.onchangeShowPassword}
       />
     ))
   }
@@ -79,7 +87,6 @@ class App extends Component {
       web: webInput,
       name: nameInput,
       password: passwordInput,
-      isShowPassword: false,
       initialClassName: initialBackgroundColorClassName,
     }
 
@@ -173,12 +180,6 @@ class App extends Component {
         </div>
       </div>
     )
-  }
-
-  onchangeShowPassword = () => {
-    const {commentsList} = this.state
-    const {isShowPassword} = commentsList
-    this.setState(!isShowPassword)
   }
 
   render() {
